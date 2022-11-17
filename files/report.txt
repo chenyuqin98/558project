@@ -1,0 +1,7 @@
+1. Datasets:
+
+    1.1. Unstructured data
+
+        For unstructured data, we crawled from https://www.hearthstonetopdecks.com/ to get the desks (a combination of cards) infomation shared on the website. We implemented a crawler to get infomation from 100 website pages, and each page contain about 20 desk urls, our crawler program will go to the desk url to get the detail infomation in the desk.
+
+        Challanges and how to solve: we need to request more than 2000 pages, which is a large load to the website server. Also, due to the large volume, our crawler maybe banned by the website. So we have to design some strateges, like show our identify or use a delay between two requests to avoid a large volume in short time.
