@@ -15,7 +15,7 @@ for card in cards:
     name = Literal(card['name'])
     cId = card['id']
     rdfID = card['dbfId']
-    img_url = f"{IMG_PATH}{cId}.jpg"
+    img_url = f"{IMG_PATH}{cId}.png"
 
     tmpCard = URIRef(f"{MYNS}card/{rdfID}")
     hs_kg.add((tmpCard, FOAF.name, name))

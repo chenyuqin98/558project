@@ -1,6 +1,6 @@
 # [START gae_python38_app]
 # [START gae_python3_app]
-from flask import Flask, request, json
+from flask import Flask, request, json, send_from_directory, render_template
 from rdflib.namespace import FOAF
 from rdflib import Graph
 from rdflib.plugins.sparql.results.jsonresults import JSONResultSerializer
@@ -8,13 +8,17 @@ import json
 import sys
 import requests
 
-
 app = Flask(__name__, static_url_path='/static')
+# app = Flask(__name__, static_url_path='/static', template_folder='knowledge-graph-browser-frontend/dist')
 g = Graph().parse("src/hskg.ttl", format="turtle")
 
 @app.route('/')
 def root():
     return 'Knowledge Graph for Hearthstone cards & decks'
+
+@app.route('/index', methods=['GET'])
+def test_index():
+    return render_template('index.html')
 
 @app.route('/search/card', methods=['GET'])
 def search_card():
