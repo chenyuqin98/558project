@@ -12,13 +12,16 @@ app = Flask(__name__, static_url_path='/static')
 # app = Flask(__name__, static_url_path='/static', template_folder='knowledge-graph-browser-frontend/dist')
 g = Graph().parse("src/hskg.ttl", format="turtle")
 
+
 @app.route('/')
 def root():
     return render_template('index.html')
 
-@app.route('/graph', methods=['GET'])
-def test_graph():
-    return render_template('graph.html')
+
+@app.route('/desk_explore', methods=['GET'])
+def desk_explore():
+    return render_template('desk_explore.html')
+
 
 @app.route('/search/card', methods=['GET'])
 def search_card():
@@ -38,6 +41,32 @@ def search_card():
     for r in g.query(q2):
         print(r)
     return "test"
+
+
+@app.route('/search/desk/<deskName>', methods=['GET'])
+def search_desk(deskName): # "Reno Paladin – RegisKillbin – Sunken City"
+    q = """
+        SELECT * WHERE { 
+            ?desk ns1:hasCard ?cardName .
+            ?desk ns2:name "desk_name" .
+            ?card ns2:name ?cardName .
+            ?card ns1:img_url ?cardUrl .
+        }
+    """
+    q = q.replace('desk_name', deskName)
+    # print(1111, q, deskName)
+    nodes = [{'id': 1, 'label': deskName}]
+    edges = []
+    res = {}
+    for r in g.query(q): 
+        if r.cardName not in res:
+            res[r.cardName.toPython()] = r.cardUrl.toPython()
+    id = 2
+    for k in res.keys():
+        nodes.append({'id': id, 'label': k, 'shape': "image", 'image': res[k], 'shapeProperties': { 'useImageSize': False }})
+        edges.append({ 'from': 1, 'to': id })
+        id += 1  
+    return {'nodes': nodes, 'edges': edges}
 
 if __name__ == '__main__':
     app.run(host='127.0.0.1', port=8080, debug=True)
