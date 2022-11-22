@@ -14,11 +14,11 @@ g = Graph().parse("src/hskg.ttl", format="turtle")
 
 @app.route('/')
 def root():
-    return 'Knowledge Graph for Hearthstone cards & decks'
-
-@app.route('/index', methods=['GET'])
-def test_index():
     return render_template('index.html')
+
+@app.route('/graph', methods=['GET'])
+def test_graph():
+    return render_template('graph.html')
 
 @app.route('/search/card', methods=['GET'])
 def search_card():
