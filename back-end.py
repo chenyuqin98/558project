@@ -1,17 +1,31 @@
 # [START gae_python38_app]
 # [START gae_python3_app]
 from flask import Flask, request, json, send_from_directory, render_template
+from flask_cors import CORS
 from rdflib.namespace import FOAF
 from rdflib import Graph
 from rdflib.plugins.sparql.results.jsonresults import JSONResultSerializer
+from collections import defaultdict
 import json
 import sys
 import requests
 
 app = Flask(__name__, static_url_path='/static')
+CORS(app)
 # app = Flask(__name__, static_url_path='/static', template_folder='knowledge-graph-browser-frontend/dist')
 g = Graph().parse("src/hskg.ttl", format="turtle")
 
+init_q = """
+        PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+        SELECT ?p ?property ?value WHERE { 
+            ?p foaf:name ?name .
+            ?p ?property ?value.
+        } 
+    """
+kg_dict = defaultdict(dict)
+
+for r in g.query(init_q):
+    kg_dict[r.p.toPython()][r.property.toPython()] = r.value.toPython()
 
 @app.route('/')
 def root():
@@ -26,27 +40,6 @@ def desk_explore():
 @app.route('/card_explore', methods=['GET'])
 def card_explore():
     return render_template('card_explore.html')
-
-
-@app.route('/search/card', methods=['GET'])
-def search_card():
-    card_name = request.args.get('card_name')
-
-    # q = "SELECT * WHERE { ?p foaf:name ?name FILTER( ?name = \"" + card_name + "\")}"
-
-    # encoder = JSONResultSerializer(g.query(q, initNs={'myns': 'http://hskg.org/', "foaf": FOAF}))
-    # encoder.serialize(sys.stdout)
-    # return ""
-    img_url = "https://art.hearthstonejson.com/v1/render/latest/enUS/256x/NEW1_034.jpg"
-    # q2 = "SELECT * WHERE { ?p myns:img_url ?url FILTER( ?url = \"" + img_url + "\")}"
-    q2 = """
-        PREFIX foaf: <http://xmlns.com/foaf/0.1/>
-        SELECT * WHERE { ?p foaf:name ?name}
-    """
-    for r in g.query(q2):
-        print(r)
-    return "test"
-
 
 @app.route('/search/desk/<deskName>', methods=['GET'])
 def search_desk(deskName): # "Reno Paladin – RegisKillbin – Sunken City"
@@ -127,7 +120,59 @@ def filter_desk():
         if len(nodes) > 300: break
 
     return {'nodes': nodes, 'edges': edges}
+
+@app.route('/filter/card', methods=['GET'])
+def filter_card():
+    card_class = request.args.get("class")
+    cost = request.args.get("cost")
+    rarity = request.args.get("rarity")
+    card_type = request.args.get("type")
+
+    res_card_list = []
+
+    # filtering
+    for k, v in kg_dict.items():
+        if card_class != "Class":
+            if 'http://hskg.org/cardClass' not in v or v['http://hskg.org/cardClass'] != card_class:
+                continue
+
+        if cost != "Cost":
+            if 'http://hskg.org/cost' not in v or v['http://hskg.org/cost'] != cost:
+                continue
+            else:
+                if cost == '7':
+                    if v['http://hskg.org/cost'] < cost:
+                        continue
+                else:
+                    if v['http://hskg.org/cost'] != cost:
+                        continue
+
+        if rarity != "Rarity":
+            if 'http://hskg.org/rarity' not in v or v['http://hskg.org/rarity'] != rarity:
+                continue
+
+        if card_type != "Type":
+            if 'http://hskg.org/type' not in v or v['http://hskg.org/type'] != card_type:
+                continue
+        
+        res_card_list.append(k)
     
+    nodes, edges = [], []
+    id = 1
+    # generate response
+    for k in res_card_list:
+        nodes.append({'id': id, 'label': k})
+        for i, p in enumerate(kg_dict[k].keys()):
+            if p != 'http://hskg.org/img_url':
+                nodes.append({'id': id+i+1, 'label': kg_dict[k][p]})
+            else:
+                nodes.append({'id': id+i+1, 'label': k, 'shape': "image", 'image': kg_dict[k][p], 'shapeProperties': { 'useImageSize': False }})
+            edges.append({ 'from': id, 'to': id+i+1 , 'label': p})
+        id += len(kg_dict[k].keys()) + 1
+
+        if len(nodes) > 300: break
+
+    return {'nodes': nodes, 'edges': edges}
 
 if __name__ == '__main__':
     app.run(host='127.0.0.1', port=8080, debug=True)

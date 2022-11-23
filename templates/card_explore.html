@@ -7,15 +7,505 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 
-    <style>
-        body {
-            background: url('https://images.alphacoders.com/555/555056.jpg') no-repeat center center fixed;
-            -webkit-background-size: cover;
-            -moz-background-size: cover;
-            background-size: cover;
-            -o-background-size: cover;
+    <style type="text/css">
+      /* body {
+        font: 10pt arial;
+      } */
+      body {
+        background: url('https://images.alphacoders.com/555/555056.jpg') no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        background-size: cover;
+        -o-background-size: cover;
+    }
+      #mynetwork {
+        /* width: 800px; */
+        height: 800px;
+        border: 1px solid lightgray;
+        background-color: #333333;
+      }
+
+      [slider] {
+        position: relative;
+        height: 14px;
+        border-radius: 10px;
+        text-align: left;
+        margin: 5px 0 10px 0;
+      }
+
+      [slider] > div {
+        position: absolute;
+        left: 13px;
+        right: 15px;
+        height: 14px;
+      }
+
+      [slider] > div > [inverse-left] {
+        position: absolute;
+        left: 0;
+        height: 14px;
+        border-radius: 10px;
+        background-color: #CCC;
+        margin: 0 7px;
+      }
+
+      [slider] > div > [inverse-right] {
+        position: absolute;
+        right: 0;
+        height: 14px;
+        border-radius: 10px;
+        background-color: #CCC;
+        margin: 0 7px;
+      }
+
+      [slider] > div > [range] {
+        position: absolute;
+        left: 0;
+        height: 14px;
+        border-radius: 14px;
+        background-color: #1ABC9C;
+      }
+
+      [slider] > div > [thumb] {
+        position: absolute;
+        top: -7px;
+        z-index: 2;
+        height: 28px;
+        width: 28px;
+        text-align: left;
+        margin-left: -11px;
+        cursor: pointer;
+        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.4);
+        background-color: #FFF;
+        border-radius: 50%;
+        outline: none;
+      }
+
+      [slider] > input[type=range] {
+        position: absolute;
+        pointer-events: none;
+        -webkit-appearance: none;
+        z-index: 3;
+        height: 14px;
+        top: -2px;
+        width: 100%;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+        filter: alpha(opacity=0);
+        -moz-opacity: 0;
+        -khtml-opacity: 0;
+        opacity: 0;
+      }
+
+      div[slider] > input[type=range]::-ms-track {
+        -webkit-appearance: none;
+        background: transparent;
+        color: transparent;
+      }
+
+      div[slider] > input[type=range]::-moz-range-track {
+        -moz-appearance: none;
+        background: transparent;
+        color: transparent;
+      }
+
+      div[slider] > input[type=range]:focus::-webkit-slider-runnable-track {
+        background: transparent;
+        border: transparent;
+      }
+
+      div[slider] > input[type=range]:focus {
+        outline: none;
+      }
+
+      div[slider] > input[type=range]::-ms-thumb {
+        pointer-events: all;
+        width: 28px;
+        height: 28px;
+        border-radius: 0px;
+        border: 0 none;
+        background: red;
+      }
+
+      div[slider] > input[type=range]::-moz-range-thumb {
+        pointer-events: all;
+        width: 28px;
+        height: 28px;
+        border-radius: 0px;
+        border: 0 none;
+        background: red;
+      }
+
+      div[slider] > input[type=range]::-webkit-slider-thumb {
+        pointer-events: all;
+        width: 28px;
+        height: 28px;
+        border-radius: 0px;
+        border: 0 none;
+        background: red;
+        -webkit-appearance: none;
+      }
+
+      div[slider] > input[type=range]::-ms-fill-lower {
+        background: transparent;
+        border: 0 none;
+      }
+
+      div[slider] > input[type=range]::-ms-fill-upper {
+        background: transparent;
+        border: 0 none;
+      }
+
+      div[slider] > input[type=range]::-ms-tooltip {
+        display: none;
+      }
+
+      [slider] > div > [sign] {
+        opacity: 0;
+        position: absolute;
+        margin-left: -11px;
+        top: -39px;
+        z-index:3;
+        background-color: #1ABC9C;
+        color: #fff;
+        width: 28px;
+        height: 28px;
+        border-radius: 28px;
+        -webkit-border-radius: 28px;
+        align-items: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        text-align: center;
+      }
+
+      [slider] > div > [sign]:after {
+        position: absolute;
+        content: '';
+        left: 0;
+        border-radius: 16px;
+        top: 19px;
+        border-left: 14px solid transparent;
+        border-right: 14px solid transparent;
+        border-top-width: 16px;
+        border-top-style: solid;
+        border-top-color: #1ABC9C;
+      }
+
+      [slider] > div > [sign] > span {
+        font-size: 10px;
+        font-weight: 700;
+        line-height: 28px;
+      }
+
+      [slider]:hover > div > [sign] {
+        opacity: 1;
+      }[slider] {
+        position: relative;
+        height: 14px;
+        border-radius: 10px;
+        text-align: left;
+        margin: 45px 0 10px 0;
+      }
+
+      [slider] > div {
+        position: absolute;
+        left: 13px;
+        right: 15px;
+        height: 14px;
+      }
+
+      [slider] > div > [inverse-left] {
+        position: absolute;
+        left: 0;
+        height: 14px;
+        border-radius: 10px;
+        background-color: #CCC;
+        margin: 0 7px;
+      }
+
+      [slider] > div > [inverse-right] {
+        position: absolute;
+        right: 0;
+        height: 14px;
+        border-radius: 10px;
+        background-color: #CCC;
+        margin: 0 7px;
+      }
+
+      [slider] > div > [range] {
+        position: absolute;
+        left: 0;
+        height: 14px;
+        border-radius: 14px;
+        background-color: #1ABC9C;
+      }
+
+      [slider] > div > [thumb] {
+        position: absolute;
+        top: -7px;
+        z-index: 2;
+        height: 28px;
+        width: 28px;
+        text-align: left;
+        margin-left: -11px;
+        cursor: pointer;
+        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.4);
+        background-color: #FFF;
+        border-radius: 50%;
+        outline: none;
+      }
+
+      [slider] > input[type=range] {
+        position: absolute;
+        pointer-events: none;
+        -webkit-appearance: none;
+        z-index: 3;
+        height: 14px;
+        top: -2px;
+        width: 100%;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+        filter: alpha(opacity=0);
+        -moz-opacity: 0;
+        -khtml-opacity: 0;
+        opacity: 0;
+      }
+
+      div[slider] > input[type=range]::-ms-track {
+        -webkit-appearance: none;
+        background: transparent;
+        color: transparent;
+      }
+
+      div[slider] > input[type=range]::-moz-range-track {
+        -moz-appearance: none;
+        background: transparent;
+        color: transparent;
+      }
+
+      div[slider] > input[type=range]:focus::-webkit-slider-runnable-track {
+        background: transparent;
+        border: transparent;
+      }
+
+      div[slider] > input[type=range]:focus {
+        outline: none;
+      }
+
+      div[slider] > input[type=range]::-ms-thumb {
+        pointer-events: all;
+        width: 28px;
+        height: 28px;
+        border-radius: 0px;
+        border: 0 none;
+        background: red;
+      }
+
+      div[slider] > input[type=range]::-moz-range-thumb {
+        pointer-events: all;
+        width: 28px;
+        height: 28px;
+        border-radius: 0px;
+        border: 0 none;
+        background: red;
+      }
+
+      div[slider] > input[type=range]::-webkit-slider-thumb {
+        pointer-events: all;
+        width: 28px;
+        height: 28px;
+        border-radius: 0px;
+        border: 0 none;
+        background: red;
+        -webkit-appearance: none;
+      }
+
+      div[slider] > input[type=range]::-ms-fill-lower {
+        background: transparent;
+        border: 0 none;
+      }
+
+      div[slider] > input[type=range]::-ms-fill-upper {
+        background: transparent;
+        border: 0 none;
+      }
+
+      div[slider] > input[type=range]::-ms-tooltip {
+        display: none;
+      }
+
+      [slider] > div > [sign] {
+        opacity: 0;
+        position: absolute;
+        margin-left: -11px;
+        top: -39px;
+        z-index:3;
+        background-color: #1ABC9C;
+        color: #fff;
+        width: 28px;
+        height: 28px;
+        border-radius: 28px;
+        -webkit-border-radius: 28px;
+        align-items: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        text-align: center;
+      }
+
+      [slider] > div > [sign]:after {
+        position: absolute;
+        content: '';
+        left: 0;
+        border-radius: 16px;
+        top: 19px;
+        border-left: 14px solid transparent;
+        border-right: 14px solid transparent;
+        border-top-width: 16px;
+        border-top-style: solid;
+        border-top-color: #1ABC9C;
+      }
+
+      [slider] > div > [sign] > span {
+        font-size: 8px;
+        font-weight: 700;
+        line-height: 28px;
+      }
+
+      [slider]:hover > div > [sign] {
+        opacity: 1;
+      }
+
+      [slider] > div > [sign] {
+        opacity: 0.5;
+      }
+    </style>
+
+    <script
+      type="text/javascript"
+      src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"
+    ></script>
+
+    <script type="text/javascript">
+      // var DIR = "img/soft-scraps-icons/";
+
+      var nodes = null;
+      var edges = null;
+      var network = null;
+
+      // Called when the Visualization API is loaded.
+      function draw() {
+        var container = document.getElementById("mynetwork");
+        var options = {
+          nodes: {
+            borderWidth: 2,
+            borderWidthSelected: 8,
+            size: 24,
+            color: {
+              border: "orange",
+              background: "black",
+              highlight: {
+                border: "black",
+                background: "white",
+              },
+              hover: {
+                border: "orange",
+                background: "grey",
+              },
+            },
+            font: { color: "#eeeeee" },
+            shapeProperties: {
+              useBorderWithImage: true,
+            },
+          },
+          edges: {
+            color: "lightgray",
+          },
+        };
+
+        // var url = `http://127.0.0.1:8080/search/desk/${deskName}`
+        var card_class = this.document.getElementById('class')
+        var cost = this.document.getElementById('cost')
+        var rarity = this.document.getElementById('rarity')
+        var type = this.document.getElementById('type')
+        var url = `http://127.0.0.1:8080/filter/card?class=${card_class.value}&cost=${cost.value}&rarity=${rarity.value}&type=${type.value}`
+        var req = new XMLHttpRequest();
+        req.open('GET', url, true);
+        req.send();
+        req.onload  = function() {
+            data = JSON.parse(this.response);
+            console.log(data);
+            network = new vis.Network(container, data, options);
         }
-      </style>
+      }
+    </script>
   </head>
-  <body></body>
+
+  <body>
+    <div class="container">
+      <div class="card">
+        <div>
+          <h1 class="text-center">Cards Explore</h1>
+          <form>
+            <div class="row me-auto">
+              <div class="btn-group col-3">
+                <select class="form-select" aria-label="Default select example" id="class">
+                  <option selected>Class</option>
+                  <option value="DEATHKNIGHT">Death Knight</option>
+                  <option value="DEMONHUNTER">Demon Hunter</option>
+                  <option value="DRUID">Druid</option>
+                  <option value="HUNTER">Hunter</option>
+                  <option value="MAGE">Mage</option>
+                  <option value="PALADIN">Paladin</option>
+                  <option value="PRIEST">Priest</option>
+                  <option value="ROGUE">Rogue</option>
+                  <option value="SHAMAN">Shaman</option>
+                  <option value="WARLOCK">Warlock</option>
+                  <option value="WARRIOR">Warrior</option>
+                  <option value="NEUTRAL">Neutral</option>
+                </select>
+              </div>
+              <div class="btn-group col-3">
+                <select class="form-select" aria-label="Default select example" id="cost">
+                  <option selected>Cost</option>
+                  <option value="0">0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7+</option>
+                </select>
+              </div>
+              <div class="btn-group col-3">
+                <select class="form-select" aria-label="Default select example" id="rarity">
+                  <option selected>Rarity</option>
+                  <option value="FREE">Free</option>
+                  <option value="COMMON">Common</option>
+                  <option value="RARE">Rare</option>
+                  <option value="EPIC">Epic</option>
+                  <option value="LEGENDARY">Legendary</option>
+                </select>
+              </div>
+              <div class="btn-group col-3">
+                <select class="form-select" aria-label="Default select example" id="type">
+                  <option selected>Type</option>
+                  <option value="ENCHANTMENT">Enchantment</option>
+                  <option value="HERO">Hero</option>
+                  <option value="HERO_POWER">Hero Power</option>
+                  <option value="LOCATION">Location</option>
+                  <option value="MINION">Minion</option>
+                  <option value="SPELL">Spell</option>
+                  <option value="WEAPON">Weapon</option>
+                </select>
+              </div>
+            </div>
+            <div class="text-center mt-3 mb-3">
+              <button type="button" class="btn btn-primary" 
+                      onclick="draw()">filter</button>
+            </div>
+          </form>
+        </div>
+        <div id="mynetwork"></div>
+      </div>
+    </div>
+  </body>
 </html>
