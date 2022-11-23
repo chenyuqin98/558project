@@ -133,44 +133,64 @@ def filter_card():
     # filtering
     for k, v in kg_dict.items():
         if card_class != "Class":
-            if 'http://hskg.org/cardClass' not in v or v['http://hskg.org/cardClass'] != card_class:
+            if 'http://hskg.org/cardClass' not in v:
+                continue
+            if v['http://hskg.org/cardClass'] != card_class:
                 continue
 
         if cost != "Cost":
-            if 'http://hskg.org/cost' not in v or v['http://hskg.org/cost'] != cost:
+            if 'http://hskg.org/cost' not in v:
                 continue
             else:
-                if cost == '7':
-                    if v['http://hskg.org/cost'] < cost:
+                if cost == 7:
+                    if int(v['http://hskg.org/cost']) < 7:
                         continue
                 else:
-                    if v['http://hskg.org/cost'] != cost:
+                    if int(v['http://hskg.org/cost']) != cost:
                         continue
 
         if rarity != "Rarity":
-            if 'http://hskg.org/rarity' not in v or v['http://hskg.org/rarity'] != rarity:
+            if 'http://hskg.org/rarity' not in v :
+                continue
+            if v['http://hskg.org/rarity'] != rarity:
                 continue
 
         if card_type != "Type":
-            if 'http://hskg.org/type' not in v or v['http://hskg.org/type'] != card_type:
+            if 'http://hskg.org/type' not in v:
+                continue
+            if v['http://hskg.org/type'] != card_type:
                 continue
         
         res_card_list.append(k)
-    
+
     nodes, edges = [], []
+    label_nodeId_dict = {}
     id = 1
     # generate response
     for k in res_card_list:
         nodes.append({'id': id, 'label': k})
+        node_id = id
+        p_id = None
+        id += 1
         for i, p in enumerate(kg_dict[k].keys()):
+            # ignore set battleground
+            if 'battle' in p:
+                continue
+            if p in ["http://hskg.org/dbfId", "http://hskg.org/collectible", "http://hskg.org/health"]:
+                continue
             if p != 'http://hskg.org/img_url':
-                nodes.append({'id': id+i+1, 'label': kg_dict[k][p]})
+                if kg_dict[k][p] not in label_nodeId_dict:
+                    nodes.append({'id': id, 'label': kg_dict[k][p]})
+                    label_nodeId_dict[kg_dict[k][p]] = id
+                    id += 1
+                p_id = label_nodeId_dict[kg_dict[k][p]]
             else:
-                nodes.append({'id': id+i+1, 'label': k, 'shape': "image", 'image': kg_dict[k][p], 'shapeProperties': { 'useImageSize': False }})
-            edges.append({ 'from': id, 'to': id+i+1 , 'label': p})
-        id += len(kg_dict[k].keys()) + 1
+                nodes.append({'id': id, 'label': k, 'shape': "image", 'image': kg_dict[k][p], 'shapeProperties': { 'useImageSize': False }})
+                p_id = id
+                id += 1
+            edges.append({ 'from': node_id, 'to': p_id , 'label': p})
 
-        if len(nodes) > 300: break
+        if len(nodes) > 200: break
 
     return {'nodes': nodes, 'edges': edges}
 
