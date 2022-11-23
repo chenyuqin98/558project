@@ -23,6 +23,11 @@ def desk_explore():
     return render_template('desk_explore.html')
 
 
+@app.route('/card_explore', methods=['GET'])
+def card_explore():
+    return render_template('card_explore.html')
+
+
 @app.route('/search/card', methods=['GET'])
 def search_card():
     card_name = request.args.get('card_name')
