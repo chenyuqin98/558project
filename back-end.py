@@ -67,26 +67,33 @@ def search_desk(deskName): # "Reno Paladin – RegisKillbin – Sunken City"
     return {'nodes': nodes, 'edges': edges}
 
 
-def sub_search_desk(deskName, id, nodes, edges):
+def sub_search_desk(deskName, id, nodes, edges, class_dic):
     q = """
         SELECT * WHERE { 
             ?desk ns1:hasCard ?cardName .
             ?desk ns2:name "desk_name" .
             ?card ns2:name ?cardName .
             ?card ns1:img_url ?cardUrl .
+            ?card ns1:cardClass ?cardClass .
         }
     """
     q = q.replace('desk_name', deskName)
     res = {}
     for r in g.query(q): 
         if r.cardName.toPython() not in res:
-            res[r.cardName.toPython()] = r.cardUrl.toPython()
+            res[r.cardName.toPython()] = [r.cardUrl.toPython(), r.cardClass.toPython()]
     desk_id = id - 3
     for k in res.keys():
-        nodes.append({'id': id, 'label': k, 'shape': "image", 'image': res[k], 'shapeProperties': { 'useImageSize': False }})
-        edges.append({ 'from': desk_id, 'to': id })
+        nodes.append({'id': id, 'label': k, 'shape': "image", 'image': res[k][0], 'shapeProperties': { 'useImageSize': False }})
+        edges.append({'from': desk_id, 'to': id })
+        node_id = id
         id += 1  
-    return id, nodes, edges
+        if res[k][1] not in class_dic:
+            class_dic[res[k][1]] = id
+            nodes.append({'id': id, 'label': res[k][1]})
+            id += 1
+        edges.append({'from': node_id, 'to': class_dic[res[k][1]], 'label': 'cardClass'})
+    return id, nodes, edges, class_dic
 
 
 @app.route('/filter/desk', methods=['GET'])
@@ -109,6 +116,7 @@ def filter_desk():
 
     nodes, edges = [], []
     id = 1
+    class_dic = {} # className: id
     for r in g.query(q): 
         nodes.append({'id': id, 'label': r.deskName.toPython()})
         nodes.append({'id': id+1, 'label': r.deskPrice.toPython()})
@@ -116,10 +124,11 @@ def filter_desk():
         edges.append({'from': id, 'to': id+1, 'label': 'cost'})
         edges.append({'from': id, 'to': id+2, 'label': 'score'})
         id += 3
-        id, nodes, edges = sub_search_desk(r.deskName.toPython(), id, nodes, edges)
+        id, nodes, edges, class_dic = sub_search_desk(r.deskName.toPython(), id, nodes, edges, class_dic)
         if len(nodes) > 300: break
 
     return {'nodes': nodes, 'edges': edges}
+
 
 @app.route('/filter/card', methods=['GET'])
 def filter_card():
@@ -193,6 +202,7 @@ def filter_card():
         if len(nodes) > 200: break
 
     return {'nodes': nodes, 'edges': edges}
+
 
 if __name__ == '__main__':
     app.run(host='127.0.0.1', port=8080, debug=True)
