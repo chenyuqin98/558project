@@ -1,14 +1,16 @@
 # [START gae_python38_app]
 # [START gae_python3_app]
-from flask import Flask, request, json, send_from_directory, render_template
+from flask import Flask, request, jsonify, send_from_directory, render_template
 from flask_cors import CORS
-from rdflib.namespace import FOAF
+# from rdflib.namespace import FOAF
 from rdflib import Graph
-from rdflib.plugins.sparql.results.jsonresults import JSONResultSerializer
+# from rdflib.plugins.sparql.results.jsonresults import JSONResultSerializer
 from collections import defaultdict
 import json
 import sys
 import requests
+from ampligraph.utils import restore_model
+from ampligraph.discovery import query_topn
 
 app = Flask(__name__, static_url_path='/static')
 CORS(app)
@@ -202,6 +204,18 @@ def filter_card():
         if len(nodes) > 200: break
 
     return {'nodes': nodes, 'edges': edges}
+
+
+@app.route('/recommend/desk/<deskName>', methods=['GET'])
+def recommend_desk(deskName):
+    # return 'test'
+    restored_model = restore_model(model_name_path = 'recommend.pkl')  
+    rlt = query_topn(restored_model, top_n=5,
+                    head=deskName, relation='has_card', tail=None,
+                    ents_to_consider=None, rels_to_consider=None)[0].tolist()
+    print(rlt)
+    # return rlt
+    return jsonify(rlt)
 
 
 if __name__ == '__main__':
