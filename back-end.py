@@ -43,6 +43,12 @@ def desk_explore():
 def card_explore():
     return render_template('card_explore.html')
 
+
+@app.route('/recommend', methods=['GET'])
+def recommend():
+    return render_template('recommend.html')
+
+
 @app.route('/search/desk/<deskName>', methods=['GET'])
 def search_desk(deskName): # "Reno Paladin – RegisKillbin – Sunken City"
     q = """

@@ -351,3 +351,45 @@ INFO -
 INFO - Name : xavier
 INFO - uniform : False
 INFO - 127.0.0.1 - - [24/Nov/2022 01:34:20] "GET /recommend/desk/Reno%20Paladin%20–%20RegisKillbin%20–%20Sunken%20City HTTP/1.1" 200 -
+INFO - 127.0.0.1 - - [24/Nov/2022 12:40:04] "GET / HTTP/1.1" 200 -
+INFO - 127.0.0.1 - - [24/Nov/2022 12:40:26] "GET /card_explore HTTP/1.1" 200 -
+INFO - 127.0.0.1 - - [24/Nov/2022 12:40:31] "GET /desk_explore HTTP/1.1" 200 -
+INFO -  * Detected change in 'C:\\Users\\yuqin\\Desktop\\2022 Fall\\558\\project\\back-end.py', reloading
+INFO -  * Restarting with stat
+WARNING -  * Debugger is active!
+INFO -  * Debugger PIN: 942-443-881
+INFO - 127.0.0.1 - - [24/Nov/2022 13:25:57] "GET / HTTP/1.1" 200 -
+INFO - 127.0.0.1 - - [24/Nov/2022 13:26:02] "GET /recommend HTTP/1.1" 200 -
+INFO - 127.0.0.1 - - [24/Nov/2022 13:26:17] "GET / HTTP/1.1" 200 -
+INFO - 127.0.0.1 - - [24/Nov/2022 13:27:17] "GET / HTTP/1.1" 200 -
+INFO - 127.0.0.1 - - [24/Nov/2022 13:27:17] "GET /static/2022-11-23%20152502.png HTTP/1.1" 200 -
+INFO - 127.0.0.1 - - [24/Nov/2022 13:27:17] "GET /static/2022-11-23%20154651.png HTTP/1.1" 200 -
+INFO - 127.0.0.1 - - [24/Nov/2022 13:27:17] "GET /static/20190915.jpg HTTP/1.1" 200 -
+INFO - 127.0.0.1 - - [24/Nov/2022 13:27:26] "GET / HTTP/1.1" 200 -
+INFO - 127.0.0.1 - - [24/Nov/2022 13:27:26] "[36mGET /static/2022-11-23%20152502.png HTTP/1.1[0m" 304 -
+INFO - 127.0.0.1 - - [24/Nov/2022 13:27:26] "[36mGET /static/2022-11-23%20154651.png HTTP/1.1[0m" 304 -
+INFO - 127.0.0.1 - - [24/Nov/2022 13:27:26] "[36mGET /static/20190915.jpg HTTP/1.1[0m" 304 -
+INFO - 127.0.0.1 - - [24/Nov/2022 13:27:26] "GET / HTTP/1.1" 200 -
+INFO - 127.0.0.1 - - [24/Nov/2022 13:27:26] "[36mGET /static/2022-11-23%20152502.png HTTP/1.1[0m" 304 -
+INFO - 127.0.0.1 - - [24/Nov/2022 13:27:26] "[36mGET /static/2022-11-23%20154651.png HTTP/1.1[0m" 304 -
+INFO - 127.0.0.1 - - [24/Nov/2022 13:27:26] "[36mGET /static/20190915.jpg HTTP/1.1[0m" 304 -
+INFO - 127.0.0.1 - - [24/Nov/2022 13:27:26] "GET / HTTP/1.1" 200 -
+INFO - 127.0.0.1 - - [24/Nov/2022 13:27:26] "[36mGET /static/2022-11-23%20152502.png HTTP/1.1[0m" 304 -
+INFO - 127.0.0.1 - - [24/Nov/2022 13:27:26] "[36mGET /static/2022-11-23%20154651.png HTTP/1.1[0m" 304 -
+INFO - 127.0.0.1 - - [24/Nov/2022 13:27:26] "[36mGET /static/20190915.jpg HTTP/1.1[0m" 304 -
+INFO - 127.0.0.1 - - [24/Nov/2022 13:27:26] "GET / HTTP/1.1" 200 -
+INFO - 127.0.0.1 - - [24/Nov/2022 13:27:26] "[36mGET /static/2022-11-23%20152502.png HTTP/1.1[0m" 304 -
+INFO - 127.0.0.1 - - [24/Nov/2022 13:27:26] "[36mGET /static/2022-11-23%20154651.png HTTP/1.1[0m" 304 -
+INFO - 127.0.0.1 - - [24/Nov/2022 13:27:26] "[36mGET /static/20190915.jpg HTTP/1.1[0m" 304 -
+INFO - 127.0.0.1 - - [24/Nov/2022 13:27:27] "GET / HTTP/1.1" 200 -
+INFO - 127.0.0.1 - - [24/Nov/2022 13:27:27] "[36mGET /static/2022-11-23%20152502.png HTTP/1.1[0m" 304 -
+INFO - 127.0.0.1 - - [24/Nov/2022 13:27:27] "[36mGET /static/2022-11-23%20154651.png HTTP/1.1[0m" 304 -
+INFO - 127.0.0.1 - - [24/Nov/2022 13:27:27] "[36mGET /static/20190915.jpg HTTP/1.1[0m" 304 -
+INFO - 127.0.0.1 - - [24/Nov/2022 13:27:28] "GET / HTTP/1.1" 200 -
+INFO - 127.0.0.1 - - [24/Nov/2022 13:27:28] "[36mGET /static/2022-11-23%20152502.png HTTP/1.1[0m" 304 -
+INFO - 127.0.0.1 - - [24/Nov/2022 13:27:28] "[36mGET /static/2022-11-23%20154651.png HTTP/1.1[0m" 304 -
+INFO - 127.0.0.1 - - [24/Nov/2022 13:27:28] "[36mGET /static/20190915.jpg HTTP/1.1[0m" 304 -
+INFO - 127.0.0.1 - - [24/Nov/2022 13:27:28] "GET / HTTP/1.1" 200 -
+INFO - 127.0.0.1 - - [24/Nov/2022 13:27:28] "[36mGET /static/2022-11-23%20152502.png HTTP/1.1[0m" 304 -
+INFO - 127.0.0.1 - - [24/Nov/2022 13:27:28] "[36mGET /static/2022-11-23%20154651.png HTTP/1.1[0m" 304 -
+INFO - 127.0.0.1 - - [24/Nov/2022 13:27:28] "[36mGET /static/20190915.jpg HTTP/1.1[0m" 304 -
