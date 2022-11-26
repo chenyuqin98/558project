@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Desk Explore</title>
+    <title>deck Explore</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
@@ -391,7 +391,7 @@
       var network = null;
 
       // Called when the Visualization API is loaded.
-      function draw(deskName) {
+      function draw(deckName) {
         var container = document.getElementById("mynetwork");
         var options = {
           nodes: {
@@ -420,13 +420,13 @@
           },
         };
 
-        // var url = `http://127.0.0.1:8080/search/desk/${deskName}`
+        // var url = `http://127.0.0.1:8080/search/deck/${deckName}`
         var score_min = this.document.getElementById('score_min').value
         var score_max = this.document.getElementById('score_max').value
         var cost_min = this.document.getElementById('cost_min').value
         var cost_max = this.document.getElementById('cost_max').value
         // console.log(score_max, score_min, cost_max, cost_min)
-        var url = `http://127.0.0.1:8080/filter/desk?score_min=${score_min}&score_max=${score_max}&cost_min=${cost_min}&cost_max=${cost_max}`
+        var url = `http://127.0.0.1:8080/filter/deck?score_min=${score_min}&score_max=${score_max}&cost_min=${cost_min}&cost_max=${cost_max}`
         var req = new XMLHttpRequest();
         req.open('GET', url, true);
         req.send();

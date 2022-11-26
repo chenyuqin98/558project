@@ -34,9 +34,9 @@ def root():
     return render_template('index.html')
 
 
-@app.route('/desk_explore', methods=['GET'])
-def desk_explore():
-    return render_template('desk_explore.html')
+@app.route('/deck_explore', methods=['GET'])
+def deck_explore():
+    return render_template('deck_explore.html')
 
 
 @app.route('/card_explore', methods=['GET'])
@@ -49,19 +49,19 @@ def recommend():
     return render_template('recommend.html')
 
 
-@app.route('/search/desk/<deskName>', methods=['GET'])
-def search_desk(deskName): # "Reno Paladin – RegisKillbin – Sunken City"
+@app.route('/search/deck/<deckName>', methods=['GET'])
+def search_deck(deckName): # "Reno Paladin – RegisKillbin – Sunken City"
     q = """
         SELECT * WHERE { 
-            ?desk ns1:hasCard ?cardName .
-            ?desk ns2:name "desk_name" .
+            ?deck ns1:hasCard ?cardName .
+            ?deck ns2:name "deck_name" .
             ?card ns2:name ?cardName .
             ?card ns1:img_url ?cardUrl .
         }
     """
-    q = q.replace('desk_name', deskName)
-    # print(1111, q, deskName)
-    nodes = [{'id': 1, 'label': deskName}]
+    q = q.replace('deck_name', deckName)
+    # print(1111, q, deckName)
+    nodes = [{'id': 1, 'label': deckName}]
     edges = []
     res = {}
     for r in g.query(q): 
@@ -75,25 +75,25 @@ def search_desk(deskName): # "Reno Paladin – RegisKillbin – Sunken City"
     return {'nodes': nodes, 'edges': edges}
 
 
-def sub_search_desk(deskName, id, nodes, edges, class_dic):
+def sub_search_deck(deckName, id, nodes, edges, class_dic):
     q = """
         SELECT * WHERE { 
-            ?desk ns1:hasCard ?cardName .
-            ?desk ns2:name "desk_name" .
+            ?deck ns1:hasCard ?cardName .
+            ?deck ns2:name "deck_name" .
             ?card ns2:name ?cardName .
             ?card ns1:img_url ?cardUrl .
             ?card ns1:cardClass ?cardClass .
         }
     """
-    q = q.replace('desk_name', deskName)
+    q = q.replace('deck_name', deckName)
     res = {}
     for r in g.query(q): 
         if r.cardName.toPython() not in res:
             res[r.cardName.toPython()] = [r.cardUrl.toPython(), r.cardClass.toPython()]
-    desk_id = id - 3
+    deck_id = id - 3
     for k in res.keys():
         nodes.append({'id': id, 'label': k, 'shape': "image", 'image': res[k][0], 'shapeProperties': { 'useImageSize': False }})
-        edges.append({'from': desk_id, 'to': id })
+        edges.append({'from': deck_id, 'to': id })
         node_id = id
         id += 1  
         if res[k][1] not in class_dic:
@@ -104,8 +104,8 @@ def sub_search_desk(deskName, id, nodes, edges, class_dic):
     return id, nodes, edges, class_dic
 
 
-@app.route('/filter/desk', methods=['GET'])
-def filter_desk():
+@app.route('/filter/deck', methods=['GET'])
+def filter_deck():
     score_min = request.args.get("score_min")
     score_max = request.args.get("score_max")
     cost_min = request.args.get("cost_min")
@@ -113,12 +113,12 @@ def filter_desk():
     q = """
         PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
         SELECT * WHERE { 
-            ?desk ns2:name ?deskName .
-            ?desk ns1:price ?deskPrice .
-            ?desk ns1:score ?deskScore .
-            Filter(xsd:integer(?deskScore) >= scoreMin && xsd:integer(?deskScore) <= scoreMax) .
-            Filter(xsd:integer(?deskPrice) >= costMin && xsd:integer(?deskPrice) <= costMax) .
-        } ORDER BY DESC(?deskScore) (?deskPrice)
+            ?deck ns2:name ?deckName .
+            ?deck ns1:price ?deckPrice .
+            ?deck ns1:score ?deckScore .
+            Filter(xsd:integer(?deckScore) >= scoreMin && xsd:integer(?deckScore) <= scoreMax) .
+            Filter(xsd:integer(?deckPrice) >= costMin && xsd:integer(?deckPrice) <= costMax) .
+        } ORDER BY DESC(?deckScore) (?deckPrice)
     """
     q = q.replace('scoreMin', score_min).replace('scoreMax', score_max).replace('costMin', cost_min).replace('costMax', cost_max)
 
@@ -126,13 +126,13 @@ def filter_desk():
     id = 1
     class_dic = {} # className: id
     for r in g.query(q): 
-        nodes.append({'id': id, 'label': r.deskName.toPython()})
-        nodes.append({'id': id+1, 'label': r.deskPrice.toPython()})
-        nodes.append({'id': id+2, 'label': r.deskScore.toPython()})
+        nodes.append({'id': id, 'label': r.deckName.toPython()})
+        nodes.append({'id': id+1, 'label': r.deckPrice.toPython()})
+        nodes.append({'id': id+2, 'label': r.deckScore.toPython()})
         edges.append({'from': id, 'to': id+1, 'label': 'cost'})
         edges.append({'from': id, 'to': id+2, 'label': 'score'})
         id += 3
-        id, nodes, edges, class_dic = sub_search_desk(r.deskName.toPython(), id, nodes, edges, class_dic)
+        id, nodes, edges, class_dic = sub_search_deck(r.deckName.toPython(), id, nodes, edges, class_dic)
         if len(nodes) > 300: break
 
     return {'nodes': nodes, 'edges': edges}
@@ -212,12 +212,12 @@ def filter_card():
     return {'nodes': nodes, 'edges': edges}
 
 
-@app.route('/recommend/desk/<deskName>', methods=['GET'])
-def recommend_desk(deskName):
+@app.route('/recommend/deck/<deckName>', methods=['GET'])
+def recommend_deck(deckName):
     # return 'test'
     restored_model = restore_model(model_name_path = 'recommend.pkl')  
     rlt = query_topn(restored_model, top_n=5,
-                    head=deskName, relation='has_card', tail=None,
+                    head=deckName, relation='has_card', tail=None,
                     ents_to_consider=None, rels_to_consider=None)[0].tolist()
     print(rlt)
     # return rlt

@@ -853,3 +853,75 @@ INFO - 127.0.0.1 - - [25/Nov/2022 15:49:23] "[36mGET /static/2022-11-23%2015465
 INFO - 127.0.0.1 - - [25/Nov/2022 15:49:23] "[36mGET /static/111.png HTTP/1.1[0m" 304 -
 INFO - 127.0.0.1 - - [25/Nov/2022 15:49:23] "[36mGET /static/20190915.jpg HTTP/1.1[0m" 304 -
 INFO - 127.0.0.1 - - [25/Nov/2022 15:49:24] "GET /recommend HTTP/1.1" 200 -
+INFO - 127.0.0.1 - - [25/Nov/2022 16:29:28] "GET /search/desk/Reno%20Paladin%20–%20RegisKillbin%20–%20Sunken%20City HTTP/1.1" 200 -
+INFO - Will load model recommend.pkl.
+INFO - 
+--------- Loss ---------
+INFO - Name : multiclass_nll
+INFO - eta : 5
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 1e-05
+INFO - p : 3
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.001
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+INFO - 127.0.0.1 - - [25/Nov/2022 16:29:29] "GET /recommend/desk/Reno%20Paladin%20–%20RegisKillbin%20–%20Sunken%20City HTTP/1.1" 200 -
+INFO - 127.0.0.1 - - [25/Nov/2022 16:30:18] "GET /recommend HTTP/1.1" 200 -
+INFO - 127.0.0.1 - - [25/Nov/2022 16:30:19] "GET /search/desk/Reno%20Paladin%20–%20RegisKillbin%20–%20Sunken%20City HTTP/1.1" 200 -
+INFO - Will load model recommend.pkl.
+INFO - 
+--------- Loss ---------
+INFO - Name : multiclass_nll
+INFO - eta : 5
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 1e-05
+INFO - p : 3
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.001
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+INFO - 127.0.0.1 - - [25/Nov/2022 16:30:21] "GET /recommend/desk/Reno%20Paladin%20–%20RegisKillbin%20–%20Sunken%20City HTTP/1.1" 200 -
+INFO - 127.0.0.1 - - [25/Nov/2022 19:09:02] "GET / HTTP/1.1" 200 -
+INFO - 127.0.0.1 - - [25/Nov/2022 19:09:02] "GET /static/111.png HTTP/1.1" 200 -
+INFO - 127.0.0.1 - - [25/Nov/2022 19:09:02] "[36mGET /static/20190915.jpg HTTP/1.1[0m" 304 -
+INFO - 127.0.0.1 - - [25/Nov/2022 19:09:02] "[36mGET /static/2022-11-23%20152502.png HTTP/1.1[0m" 304 -
+INFO - 127.0.0.1 - - [25/Nov/2022 19:09:02] "[36mGET /static/2022-11-23%20154651.png HTTP/1.1[0m" 304 -
+INFO - 127.0.0.1 - - [25/Nov/2022 19:09:35] "GET /card_explore HTTP/1.1" 200 -
+INFO - 127.0.0.1 - - [25/Nov/2022 19:09:37] "GET /filter/card?class=Class&cost=Cost&rarity=Rarity&type=Type HTTP/1.1" 200 -
+INFO - 127.0.0.1 - - [25/Nov/2022 19:10:03] "GET /desk_explore HTTP/1.1" 200 -
+INFO - 127.0.0.1 - - [25/Nov/2022 19:10:08] "GET /filter/desk?score_min=56&score_max=100&cost_min=15000&cost_max=30000 HTTP/1.1" 200 -
+INFO - 127.0.0.1 - - [25/Nov/2022 19:10:25] "GET /recommend HTTP/1.1" 200 -
+INFO - 127.0.0.1 - - [25/Nov/2022 19:10:26] "GET /search/desk/Reno%20Paladin%20–%20RegisKillbin%20–%20Sunken%20City HTTP/1.1" 200 -
+INFO - Will load model recommend.pkl.
+INFO - 
+--------- Loss ---------
+INFO - Name : multiclass_nll
+INFO - eta : 5
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 1e-05
+INFO - p : 3
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.001
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+INFO - 127.0.0.1 - - [25/Nov/2022 19:10:29] "GET /recommend/desk/Reno%20Paladin%20–%20RegisKillbin%20–%20Sunken%20City HTTP/1.1" 200 -
+INFO -  * Detected change in 'C:\\Users\\yuqin\\Desktop\\2022 Fall\\558\\project\\back-end.py', reloading
