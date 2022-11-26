@@ -393,3 +393,463 @@ INFO - 127.0.0.1 - - [24/Nov/2022 13:27:28] "GET / HTTP/1.1" 200 -
 INFO - 127.0.0.1 - - [24/Nov/2022 13:27:28] "[36mGET /static/2022-11-23%20152502.png HTTP/1.1[0m" 304 -
 INFO - 127.0.0.1 - - [24/Nov/2022 13:27:28] "[36mGET /static/2022-11-23%20154651.png HTTP/1.1[0m" 304 -
 INFO - 127.0.0.1 - - [24/Nov/2022 13:27:28] "[36mGET /static/20190915.jpg HTTP/1.1[0m" 304 -
+INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8080
+INFO - [33mPress CTRL+C to quit[0m
+INFO -  * Restarting with stat
+WARNING -  * Debugger is active!
+INFO -  * Debugger PIN: 942-443-881
+INFO - 127.0.0.1 - - [24/Nov/2022 13:28:25] "GET / HTTP/1.1" 200 -
+INFO - 127.0.0.1 - - [24/Nov/2022 13:28:25] "[36mGET /static/2022-11-23%20152502.png HTTP/1.1[0m" 304 -
+INFO - 127.0.0.1 - - [24/Nov/2022 13:28:25] "[36mGET /static/2022-11-23%20154651.png HTTP/1.1[0m" 304 -
+INFO - 127.0.0.1 - - [24/Nov/2022 13:28:25] "[36mGET /static/20190915.jpg HTTP/1.1[0m" 304 -
+INFO - 127.0.0.1 - - [24/Nov/2022 13:28:55] "GET / HTTP/1.1" 200 -
+INFO - 127.0.0.1 - - [24/Nov/2022 13:28:55] "[36mGET /static/2022-11-23%20152502.png HTTP/1.1[0m" 304 -
+INFO - 127.0.0.1 - - [24/Nov/2022 13:28:55] "[36mGET /static/2022-11-23%20154651.png HTTP/1.1[0m" 304 -
+INFO - 127.0.0.1 - - [24/Nov/2022 13:28:55] "[36mGET /static/20190915.jpg HTTP/1.1[0m" 304 -
+INFO - 127.0.0.1 - - [24/Nov/2022 13:28:56] "GET / HTTP/1.1" 200 -
+INFO - 127.0.0.1 - - [24/Nov/2022 13:28:56] "[36mGET /static/2022-11-23%20152502.png HTTP/1.1[0m" 304 -
+INFO - 127.0.0.1 - - [24/Nov/2022 13:28:56] "[36mGET /static/2022-11-23%20154651.png HTTP/1.1[0m" 304 -
+INFO - 127.0.0.1 - - [24/Nov/2022 13:28:56] "[36mGET /static/20190915.jpg HTTP/1.1[0m" 304 -
+INFO - 127.0.0.1 - - [24/Nov/2022 13:28:57] "GET / HTTP/1.1" 200 -
+INFO - 127.0.0.1 - - [24/Nov/2022 13:28:57] "[36mGET /static/2022-11-23%20152502.png HTTP/1.1[0m" 304 -
+INFO - 127.0.0.1 - - [24/Nov/2022 13:28:57] "[36mGET /static/2022-11-23%20154651.png HTTP/1.1[0m" 304 -
+INFO - 127.0.0.1 - - [24/Nov/2022 13:28:57] "[36mGET /static/20190915.jpg HTTP/1.1[0m" 304 -
+INFO - 127.0.0.1 - - [24/Nov/2022 13:28:57] "GET / HTTP/1.1" 200 -
+INFO - 127.0.0.1 - - [24/Nov/2022 13:28:57] "[36mGET /static/2022-11-23%20152502.png HTTP/1.1[0m" 304 -
+INFO - 127.0.0.1 - - [24/Nov/2022 13:28:57] "[36mGET /static/2022-11-23%20154651.png HTTP/1.1[0m" 304 -
+INFO - 127.0.0.1 - - [24/Nov/2022 13:28:57] "[36mGET /static/20190915.jpg HTTP/1.1[0m" 304 -
+INFO - 127.0.0.1 - - [24/Nov/2022 13:28:57] "GET / HTTP/1.1" 200 -
+INFO - 127.0.0.1 - - [24/Nov/2022 13:28:57] "[36mGET /static/2022-11-23%20152502.png HTTP/1.1[0m" 304 -
+INFO - 127.0.0.1 - - [24/Nov/2022 13:28:57] "[36mGET /static/2022-11-23%20154651.png HTTP/1.1[0m" 304 -
+INFO - 127.0.0.1 - - [24/Nov/2022 13:28:57] "[36mGET /static/20190915.jpg HTTP/1.1[0m" 304 -
+INFO - 127.0.0.1 - - [24/Nov/2022 13:29:12] "GET / HTTP/1.1" 200 -
+INFO - 127.0.0.1 - - [24/Nov/2022 13:29:12] "[36mGET /static/2022-11-23%20152502.png HTTP/1.1[0m" 304 -
+INFO - 127.0.0.1 - - [24/Nov/2022 13:29:12] "[36mGET /static/2022-11-23%20154651.png HTTP/1.1[0m" 304 -
+INFO - 127.0.0.1 - - [24/Nov/2022 13:29:12] "[36mGET /static/20190915.jpg HTTP/1.1[0m" 304 -
+INFO - 127.0.0.1 - - [24/Nov/2022 13:29:23] "GET /recommend HTTP/1.1" 200 -
+INFO - 127.0.0.1 - - [24/Nov/2022 15:48:22] "GET /recommend HTTP/1.1" 200 -
+INFO - 127.0.0.1 - - [24/Nov/2022 15:48:24] "GET /search/desk/Reno%20Paladin%20–%20RegisKillbin%20–%20Sunken%20City HTTP/1.1" 200 -
+INFO - 127.0.0.1 - - [24/Nov/2022 15:49:56] "GET /recommend HTTP/1.1" 200 -
+INFO - 127.0.0.1 - - [24/Nov/2022 15:50:29] "GET /recommend HTTP/1.1" 200 -
+INFO - 127.0.0.1 - - [24/Nov/2022 15:51:17] "GET /recommend HTTP/1.1" 200 -
+INFO - 127.0.0.1 - - [24/Nov/2022 15:51:18] "GET /search/desk/Reno%20Paladin%20–%20RegisKillbin%20–%20Sunken%20City HTTP/1.1" 200 -
+INFO - 127.0.0.1 - - [24/Nov/2022 15:53:31] "GET /recommend HTTP/1.1" 200 -
+INFO - 127.0.0.1 - - [24/Nov/2022 15:54:32] "GET /recommend HTTP/1.1" 200 -
+INFO - 127.0.0.1 - - [24/Nov/2022 15:54:34] "GET /search/desk/Reno%20Paladin%20–%20RegisKillbin%20–%20Sunken%20City HTTP/1.1" 200 -
+INFO - 127.0.0.1 - - [24/Nov/2022 15:55:05] "GET /search/desk/undefined HTTP/1.1" 200 -
+INFO - 127.0.0.1 - - [24/Nov/2022 15:55:22] "GET /search/desk/Reno%20Paladin%20–%20RegisKillbin%20–%20Sunken%20City HTTP/1.1" 200 -
+INFO - 127.0.0.1 - - [24/Nov/2022 15:55:24] "GET /search/desk/undefined HTTP/1.1" 200 -
+INFO - 127.0.0.1 - - [24/Nov/2022 15:55:25] "GET /recommend HTTP/1.1" 200 -
+INFO - 127.0.0.1 - - [24/Nov/2022 15:55:26] "GET /search/desk/Reno%20Paladin%20–%20RegisKillbin%20–%20Sunken%20City HTTP/1.1" 200 -
+INFO - Will load model recommend.pkl.
+INFO - 
+--------- Loss ---------
+INFO - Name : multiclass_nll
+INFO - eta : 5
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 1e-05
+INFO - p : 3
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.001
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+ERROR - Head entity `undefined` not seen by model
+INFO - 127.0.0.1 - - [24/Nov/2022 15:55:27] "[35m[1mGET /recommend/desk/undefined HTTP/1.1[0m" 500 -
+INFO - 127.0.0.1 - - [24/Nov/2022 15:55:49] "GET /recommend HTTP/1.1" 200 -
+INFO - 127.0.0.1 - - [24/Nov/2022 15:55:50] "GET /search/desk/Reno%20Paladin%20–%20RegisKillbin%20–%20Sunken%20City HTTP/1.1" 200 -
+INFO - Will load model recommend.pkl.
+INFO - 
+--------- Loss ---------
+INFO - Name : multiclass_nll
+INFO - eta : 5
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 1e-05
+INFO - p : 3
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.001
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+INFO - 127.0.0.1 - - [24/Nov/2022 15:55:51] "GET /recommend/desk/Reno%20Paladin%20–%20RegisKillbin%20–%20Sunken%20City HTTP/1.1" 200 -
+INFO - 127.0.0.1 - - [24/Nov/2022 16:05:30] "GET /recommend HTTP/1.1" 200 -
+INFO - Will load model recommend.pkl.
+INFO - 
+--------- Loss ---------
+INFO - Name : multiclass_nll
+INFO - eta : 5
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 1e-05
+INFO - p : 3
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.001
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+INFO - 127.0.0.1 - - [24/Nov/2022 16:05:32] "GET /recommend/desk/Reno%20Paladin%20–%20RegisKillbin%20–%20Sunken%20City HTTP/1.1" 200 -
+INFO - 127.0.0.1 - - [24/Nov/2022 16:05:45] "GET /recommend HTTP/1.1" 200 -
+INFO - Will load model recommend.pkl.
+INFO - 
+--------- Loss ---------
+INFO - Name : multiclass_nll
+INFO - eta : 5
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 1e-05
+INFO - p : 3
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.001
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+INFO - 127.0.0.1 - - [24/Nov/2022 16:05:47] "GET /recommend/desk/Reno%20Paladin%20–%20RegisKillbin%20–%20Sunken%20City HTTP/1.1" 200 -
+INFO - 127.0.0.1 - - [24/Nov/2022 16:06:41] "GET /recommend HTTP/1.1" 200 -
+INFO - Will load model recommend.pkl.
+INFO - 
+--------- Loss ---------
+INFO - Name : multiclass_nll
+INFO - eta : 5
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 1e-05
+INFO - p : 3
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.001
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+INFO - 127.0.0.1 - - [24/Nov/2022 16:06:42] "GET /recommend/desk/Reno%20Paladin%20–%20RegisKillbin%20–%20Sunken%20City HTTP/1.1" 200 -
+INFO - 127.0.0.1 - - [24/Nov/2022 16:10:02] "GET /recommend HTTP/1.1" 200 -
+INFO - Will load model recommend.pkl.
+INFO - 
+--------- Loss ---------
+INFO - Name : multiclass_nll
+INFO - eta : 5
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 1e-05
+INFO - p : 3
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.001
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+INFO - 127.0.0.1 - - [24/Nov/2022 16:10:04] "GET /recommend/desk/Reno%20Paladin%20–%20RegisKillbin%20–%20Sunken%20City HTTP/1.1" 200 -
+INFO - 127.0.0.1 - - [24/Nov/2022 16:10:20] "GET /recommend HTTP/1.1" 200 -
+INFO - Will load model recommend.pkl.
+INFO - 
+--------- Loss ---------
+INFO - Name : multiclass_nll
+INFO - eta : 5
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 1e-05
+INFO - p : 3
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.001
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+INFO - 127.0.0.1 - - [24/Nov/2022 16:10:21] "GET /recommend/desk/Reno%20Paladin%20–%20RegisKillbin%20–%20Sunken%20City HTTP/1.1" 200 -
+INFO - 127.0.0.1 - - [24/Nov/2022 16:11:44] "GET /recommend HTTP/1.1" 200 -
+INFO - Will load model recommend.pkl.
+INFO - 
+--------- Loss ---------
+INFO - Name : multiclass_nll
+INFO - eta : 5
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 1e-05
+INFO - p : 3
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.001
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+INFO - 127.0.0.1 - - [24/Nov/2022 16:11:45] "GET /recommend/desk/Reno%20Paladin%20–%20RegisKillbin%20–%20Sunken%20City HTTP/1.1" 200 -
+INFO - 127.0.0.1 - - [24/Nov/2022 16:12:17] "GET /recommend HTTP/1.1" 200 -
+INFO - Will load model recommend.pkl.
+INFO - 
+--------- Loss ---------
+INFO - Name : multiclass_nll
+INFO - eta : 5
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 1e-05
+INFO - p : 3
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.001
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+INFO - 127.0.0.1 - - [24/Nov/2022 16:12:18] "GET /recommend/desk/Reno%20Paladin%20–%20RegisKillbin%20–%20Sunken%20City HTTP/1.1" 200 -
+INFO - 127.0.0.1 - - [24/Nov/2022 16:13:02] "GET /recommend HTTP/1.1" 200 -
+INFO - Will load model recommend.pkl.
+INFO - 
+--------- Loss ---------
+INFO - Name : multiclass_nll
+INFO - eta : 5
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 1e-05
+INFO - p : 3
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.001
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+INFO - 127.0.0.1 - - [24/Nov/2022 16:13:03] "GET /recommend/desk/Reno%20Paladin%20–%20RegisKillbin%20–%20Sunken%20City HTTP/1.1" 200 -
+INFO - 127.0.0.1 - - [24/Nov/2022 16:15:28] "GET /recommend HTTP/1.1" 200 -
+INFO - Will load model recommend.pkl.
+INFO - 
+--------- Loss ---------
+INFO - Name : multiclass_nll
+INFO - eta : 5
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 1e-05
+INFO - p : 3
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.001
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+INFO - 127.0.0.1 - - [24/Nov/2022 16:15:30] "GET /recommend/desk/Reno%20Paladin%20–%20RegisKillbin%20–%20Sunken%20City HTTP/1.1" 200 -
+INFO - 127.0.0.1 - - [24/Nov/2022 16:15:45] "GET /recommend HTTP/1.1" 200 -
+INFO - Will load model recommend.pkl.
+INFO - 
+--------- Loss ---------
+INFO - Name : multiclass_nll
+INFO - eta : 5
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 1e-05
+INFO - p : 3
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.001
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+INFO - 127.0.0.1 - - [24/Nov/2022 16:15:47] "GET /recommend/desk/Reno%20Paladin%20–%20RegisKillbin%20–%20Sunken%20City HTTP/1.1" 200 -
+INFO - 127.0.0.1 - - [24/Nov/2022 16:16:00] "GET /recommend HTTP/1.1" 200 -
+INFO - Will load model recommend.pkl.
+INFO - 
+--------- Loss ---------
+INFO - Name : multiclass_nll
+INFO - eta : 5
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 1e-05
+INFO - p : 3
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.001
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+INFO - 127.0.0.1 - - [24/Nov/2022 16:16:01] "GET /recommend/desk/Reno%20Paladin%20–%20RegisKillbin%20–%20Sunken%20City HTTP/1.1" 200 -
+INFO - 127.0.0.1 - - [24/Nov/2022 16:16:18] "GET /search/desk/Reno%20Paladin%20–%20RegisKillbin%20–%20Sunken%20City HTTP/1.1" 200 -
+INFO - 127.0.0.1 - - [24/Nov/2022 16:20:04] "GET / HTTP/1.1" 200 -
+INFO - 127.0.0.1 - - [24/Nov/2022 16:20:04] "[36mGET /static/2022-11-23%20152502.png HTTP/1.1[0m" 304 -
+INFO - 127.0.0.1 - - [24/Nov/2022 16:20:04] "[36mGET /static/2022-11-23%20154651.png HTTP/1.1[0m" 304 -
+INFO - 127.0.0.1 - - [24/Nov/2022 16:20:04] "[36mGET /static/20190915.jpg HTTP/1.1[0m" 304 -
+INFO - 127.0.0.1 - - [24/Nov/2022 16:21:25] "GET /recommend HTTP/1.1" 200 -
+INFO - 127.0.0.1 - - [24/Nov/2022 16:21:31] "GET /search/desk/Reno%20Paladin%20–%20RegisKillbin%20–%20Sunken%20City HTTP/1.1" 200 -
+INFO - Will load model recommend.pkl.
+INFO - 
+--------- Loss ---------
+INFO - Name : multiclass_nll
+INFO - eta : 5
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 1e-05
+INFO - p : 3
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.001
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+INFO - 127.0.0.1 - - [24/Nov/2022 16:21:33] "GET /recommend/desk/Reno%20Paladin%20–%20RegisKillbin%20–%20Sunken%20City HTTP/1.1" 200 -
+INFO - 127.0.0.1 - - [24/Nov/2022 16:27:00] "GET / HTTP/1.1" 200 -
+INFO - 127.0.0.1 - - [24/Nov/2022 16:27:00] "[36mGET /static/2022-11-23%20152502.png HTTP/1.1[0m" 304 -
+INFO - 127.0.0.1 - - [24/Nov/2022 16:27:00] "[36mGET /static/2022-11-23%20154651.png HTTP/1.1[0m" 304 -
+INFO - 127.0.0.1 - - [24/Nov/2022 16:27:00] "[36mGET /static/20190915.jpg HTTP/1.1[0m" 304 -
+INFO - 127.0.0.1 - - [24/Nov/2022 16:27:37] "GET /card_explore HTTP/1.1" 200 -
+INFO - 127.0.0.1 - - [24/Nov/2022 16:27:42] "GET /filter/card?class=Class&cost=Cost&rarity=Rarity&type=Type HTTP/1.1" 200 -
+INFO - 127.0.0.1 - - [24/Nov/2022 16:28:18] "GET /desk_explore HTTP/1.1" 200 -
+INFO - 127.0.0.1 - - [24/Nov/2022 16:28:20] "GET /filter/desk?score_min=-75&score_max=0&cost_min=15000&cost_max=30000 HTTP/1.1" 200 -
+INFO - 127.0.0.1 - - [24/Nov/2022 16:29:41] "GET /recommend HTTP/1.1" 200 -
+INFO - 127.0.0.1 - - [24/Nov/2022 16:29:43] "GET /search/desk/Reno%20Paladin%20–%20RegisKillbin%20–%20Sunken%20City HTTP/1.1" 200 -
+INFO - Will load model recommend.pkl.
+INFO - 
+--------- Loss ---------
+INFO - Name : multiclass_nll
+INFO - eta : 5
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 1e-05
+INFO - p : 3
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.001
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+INFO - 127.0.0.1 - - [24/Nov/2022 16:29:44] "GET /recommend/desk/Reno%20Paladin%20–%20RegisKillbin%20–%20Sunken%20City HTTP/1.1" 200 -
+INFO - Will load model recommend.pkl.
+INFO - 
+--------- Loss ---------
+INFO - Name : multiclass_nll
+INFO - eta : 5
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 1e-05
+INFO - p : 3
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.001
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+INFO - 127.0.0.1 - - [24/Nov/2022 16:30:39] "GET /recommend/desk/Reno%20Paladin%20–%20RegisKillbin%20–%20Sunken%20City HTTP/1.1" 200 -
+INFO - Will load model recommend.pkl.
+INFO - 
+--------- Loss ---------
+INFO - Name : multiclass_nll
+INFO - eta : 5
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 1e-05
+INFO - p : 3
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.001
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+INFO - 127.0.0.1 - - [24/Nov/2022 16:30:55] "GET /recommend/desk/Reno%20Paladin%20–%20RegisKillbin%20–%20Sunken%20City HTTP/1.1" 200 -
+INFO - 127.0.0.1 - - [24/Nov/2022 16:31:01] "GET /recommend HTTP/1.1" 200 -
+INFO - Will load model recommend.pkl.
+INFO - 
+--------- Loss ---------
+INFO - Name : multiclass_nll
+INFO - eta : 5
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 1e-05
+INFO - p : 3
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.001
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+INFO - 127.0.0.1 - - [24/Nov/2022 16:31:02] "GET /recommend/desk/Reno%20Paladin%20–%20RegisKillbin%20–%20Sunken%20City HTTP/1.1" 200 -
+INFO - 127.0.0.1 - - [25/Nov/2022 14:34:28] "GET / HTTP/1.1" 200 -
+INFO - 127.0.0.1 - - [25/Nov/2022 14:34:28] "[36mGET /static/2022-11-23%20152502.png HTTP/1.1[0m" 304 -
+INFO - 127.0.0.1 - - [25/Nov/2022 14:34:28] "[36mGET /static/2022-11-23%20154651.png HTTP/1.1[0m" 304 -
+INFO - 127.0.0.1 - - [25/Nov/2022 14:34:28] "[36mGET /static/20190915.jpg HTTP/1.1[0m" 304 -
+INFO - 127.0.0.1 - - [25/Nov/2022 14:34:28] "GET /static/111.png HTTP/1.1" 200 -
+INFO - 127.0.0.1 - - [25/Nov/2022 15:46:36] "[33mGET /recommend.html HTTP/1.1[0m" 404 -
+INFO - 127.0.0.1 - - [25/Nov/2022 15:46:43] "[33mGET /desk_explore.html HTTP/1.1[0m" 404 -
+INFO - 127.0.0.1 - - [25/Nov/2022 15:46:58] "[33mGET /card_explore.html HTTP/1.1[0m" 404 -
+INFO - 127.0.0.1 - - [25/Nov/2022 15:47:02] "GET / HTTP/1.1" 200 -
+INFO - 127.0.0.1 - - [25/Nov/2022 15:47:02] "[36mGET /static/2022-11-23%20152502.png HTTP/1.1[0m" 304 -
+INFO - 127.0.0.1 - - [25/Nov/2022 15:47:02] "[36mGET /static/2022-11-23%20154651.png HTTP/1.1[0m" 304 -
+INFO - 127.0.0.1 - - [25/Nov/2022 15:47:02] "[36mGET /static/111.png HTTP/1.1[0m" 304 -
+INFO - 127.0.0.1 - - [25/Nov/2022 15:47:02] "[36mGET /static/20190915.jpg HTTP/1.1[0m" 304 -
+INFO - 127.0.0.1 - - [25/Nov/2022 15:47:04] "GET / HTTP/1.1" 200 -
+INFO - 127.0.0.1 - - [25/Nov/2022 15:47:04] "[36mGET /static/2022-11-23%20152502.png HTTP/1.1[0m" 304 -
+INFO - 127.0.0.1 - - [25/Nov/2022 15:47:04] "[36mGET /static/2022-11-23%20154651.png HTTP/1.1[0m" 304 -
+INFO - 127.0.0.1 - - [25/Nov/2022 15:47:04] "[36mGET /static/111.png HTTP/1.1[0m" 304 -
+INFO - 127.0.0.1 - - [25/Nov/2022 15:47:04] "[36mGET /static/20190915.jpg HTTP/1.1[0m" 304 -
+INFO - 127.0.0.1 - - [25/Nov/2022 15:47:06] "[33mGET /card_explore.html HTTP/1.1[0m" 404 -
+INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8080
+INFO - [33mPress CTRL+C to quit[0m
+INFO -  * Restarting with stat
+WARNING -  * Debugger is active!
+INFO -  * Debugger PIN: 942-443-881
+INFO - 127.0.0.1 - - [25/Nov/2022 15:48:07] "[33mGET /desk_explore.html HTTP/1.1[0m" 404 -
+INFO - 127.0.0.1 - - [25/Nov/2022 15:48:11] "[33mGET /card_explore.html HTTP/1.1[0m" 404 -
+INFO - 127.0.0.1 - - [25/Nov/2022 15:48:14] "[33mGET /desk_explore.html HTTP/1.1[0m" 404 -
+INFO - 127.0.0.1 - - [25/Nov/2022 15:48:35] "GET /desk_explore HTTP/1.1" 200 -
+INFO - 127.0.0.1 - - [25/Nov/2022 15:48:57] "[33mGET /card_explore.html HTTP/1.1[0m" 404 -
+INFO - 127.0.0.1 - - [25/Nov/2022 15:49:18] "[33mGET /card_explore.html HTTP/1.1[0m" 404 -
+INFO - 127.0.0.1 - - [25/Nov/2022 15:49:23] "GET / HTTP/1.1" 200 -
+INFO - 127.0.0.1 - - [25/Nov/2022 15:49:23] "[36mGET /static/2022-11-23%20152502.png HTTP/1.1[0m" 304 -
+INFO - 127.0.0.1 - - [25/Nov/2022 15:49:23] "[36mGET /static/2022-11-23%20154651.png HTTP/1.1[0m" 304 -
+INFO - 127.0.0.1 - - [25/Nov/2022 15:49:23] "[36mGET /static/111.png HTTP/1.1[0m" 304 -
+INFO - 127.0.0.1 - - [25/Nov/2022 15:49:23] "[36mGET /static/20190915.jpg HTTP/1.1[0m" 304 -
+INFO - 127.0.0.1 - - [25/Nov/2022 15:49:24] "GET /recommend HTTP/1.1" 200 -

@@ -140,7 +140,7 @@
             // table head
             var tr=document.createElement('tr');
             table.appendChild(tr);
-            var headDates=['ranking','image','card name'];
+            var headDates=['ranking','card name'];
             for(var i=0;i<headDates.length;i++){
                 var th=document.createElement('th');
                 th.innerText = headDates[i];
@@ -155,13 +155,13 @@
                 td1.width = '100px';
                 tr.appendChild(td1);
                 // image;
-                var td2=document.createElement('td');
+                // var td2=document.createElement('td');
                 // var img = document.createElement('img');
                 // img.src = results[i].image;
                 // img.style.width = "150px";
                 // img.style.height = "150px";
                 // td2.appendChild(img);
-                tr.appendChild(td2);
+                // tr.appendChild(td2);
                 // card_name;
                 var td3=document.createElement('td');
                 td3.innerHTML = results[i][2];
