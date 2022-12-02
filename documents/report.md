@@ -65,10 +65,15 @@ Player want to change their deck and want to get some recommend cards
 
 ### Solution
 
-Build a TransE model. (More details in report)
+Used relations between decks and cards and some important properties as dataset to train a graph embedding model, then to find the nearest neighbors of desk(s), and hasCard(p).
 
 ### Evaluation
 
-Randomly hide 20% data in the triples (desk-hasCard->card) as test dataset, got a 0.09 MRR.
+Randomly select 20% data in the triples (desk-hasCard->card) as test dataset, got a 0.09 MRR.
 
 # Lessons learned
+
+1. how to extract information from structured and unstructured data, including the usage of crawler;
+2. how to build ontology by using rdflib;
+3. how to use SPARQL to query data from the graph and show data in front end;
+4. how to train a graph embedding model by using the ampligraph.

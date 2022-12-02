@@ -4,6 +4,10 @@
 >
 > Xuyang Wang, Yuqin Chen
 
+##  Demonstration Video
+
+https://www.youtube.com/watch?v=G3rBZVr4Ej0
+
 ##  Domain & Goals
 
 We plan to build a knowledge graph about **Hearthstone cards & decks**. The knowledge graph will include information about the card, such asname, text, flavor, artist, attack, cardClass, cost... Also, there will be some hot decks information in our knowledge graph.
